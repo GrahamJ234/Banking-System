@@ -117,36 +117,6 @@ public class Main {
 
     // method to exit 
 
-    /*
-     * 
-     
-    public static void exit(boolean exitprogram, double balance)
-    {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(" Do you want to make another transaction? Type y/n");
-        String answer= scanner.next();
-        if(answer.equalsIgnoreCase("n"))
-        {
-            System.out.println("Thank you for using Jaylen's Bank!");
-            balance += balance;
-            exitProgram();
-        }
-        else if(answer.equalsIgnoreCase("y"))
-        {
-            System.out.println("Redirecting you to main menu...");
-            balance += balance;
-            //exitProgram();
-        }
-        else
-        {
-            System.out.println("Invalid input");
-            exit(exitprogram, balance);
-        }
-        
-
-    }
- */
-
     public static boolean exitProgram(boolean exit)
     {
         Scanner scanner = new Scanner(System.in);
