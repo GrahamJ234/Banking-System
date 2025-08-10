@@ -8,18 +8,14 @@ public class Main {
      */
 
      //boolean exitprogram=  true;
+
     
     public static void main(String[] args) {
-        
-        // declare variables 
-
-        double balance = 0;
-        Scanner scanner = new Scanner(System.in);
-        boolean exitprogram=  true;
-        
-
         // main menu 
-        while(exitprogram)
+        double balance= 0;
+        //boolean exitprogram = true;
+        Scanner scanner = new Scanner(System.in);
+        do
         {
             System.out.println("////////////////////////////////////");
             System.out.println("Welcome to Jaylen's Bank!");
@@ -48,13 +44,13 @@ public class Main {
                     break;
                 case 4:
                     
-                    exit(exitprogram);
+                    exitProgram(true);
                     break;
                 default:
                     System.out.println("Invalid input. Please try again.");
                     break;
             }
-        }
+        }while(exitProgram(true));
         scanner.close();
     }
 
@@ -82,10 +78,10 @@ public class Main {
             System.out.println("Invalid input, please try again.");
         }
 
-        exit(exitprogram);
+        exitProgram(true);
 
 
-        scanner.close();
+        //scanner.close();
     }
 
     // method to check balance 
@@ -94,7 +90,7 @@ public class Main {
     {
         boolean exitprogram= true;
         System.out.println("This is your current balance: " + balance);
-        exit(exitprogram);
+        exitProgram(true);
     }
 
     // method to deposit 
@@ -114,35 +110,69 @@ public class Main {
         {
             System.out.println("invalid input");
         }
-        exit(exitprogram);
+        exitProgram(true);
 
-        scanner.close();
+        //scanner.close();
     }
 
     // method to exit 
 
-    public static void exit(boolean exitprogram)
+    /*
+     * 
+     
+    public static void exit(boolean exitprogram, double balance)
     {
         Scanner scanner = new Scanner(System.in);
-        System.out.println(" Are you sure you do not want to make another transaction? Type y/n");
+        System.out.println(" Do you want to make another transaction? Type y/n");
         String answer= scanner.next();
-        if(answer.equalsIgnoreCase("y"))
+        if(answer.equalsIgnoreCase("n"))
         {
             System.out.println("Thank you for using Jaylen's Bank!");
-            exitprogram= false;
+            balance += balance;
+            exitProgram();
         }
-        else if(answer.equalsIgnoreCase("n"))
+        else if(answer.equalsIgnoreCase("y"))
         {
             System.out.println("Redirecting you to main menu...");
-            exitprogram= true;
+            balance += balance;
+            //exitProgram();
         }
         else
         {
             System.out.println("Invalid input");
-            exit(exitprogram);
+            exit(exitprogram, balance);
         }
         
 
+    }
+ */
+
+    public static boolean exitProgram(boolean exit)
+    {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(" Do you want to make another transaction? Type y/n");
+        String answer= scanner.next();
+        if(answer.equalsIgnoreCase("n"))
+        {
+            System.out.println("Thank you for using Jaylen's Bank!");
+            exit = false;
+            //return exitProgram(false);
+        }
+        else if(answer.equalsIgnoreCase("y"))
+        {
+            System.out.println("Redirecting you to main menu...");
+            exit = true;
+            //return exitProgram(true);
+        }
+        else
+        {
+            System.out.println("Invalid input");
+            exit= true; 
+            //return exitProgram(true);
+        }
+
+        return exit;
+        
     }
 
     
